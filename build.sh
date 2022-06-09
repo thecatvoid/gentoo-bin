@@ -20,4 +20,4 @@ emerge --sync
 
 (while true; do etc-update --automode -5; done &) > /dev/null 2>&1
 
-(for i in $(cat /etc/portage/package-list); do emerge $i && echo merged; done)'
+emerge -uDN @world'

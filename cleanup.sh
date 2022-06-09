@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/usr/bin/env bash
 
 # Make Sure The Environment Is Non-Interactive
 export HOME="/home/runner"
