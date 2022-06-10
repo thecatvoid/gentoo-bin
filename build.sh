@@ -8,8 +8,6 @@ chroot /gentoo/ /bin/sh -c 'set -x e
 
 ln -sf /var/db/repos/gentoo/profiles/default/linux/amd64/17.1/systemd /etc/portage/make.profile
 
-emerge-webrsync
-
 emerge dev-vcs/git
 
 rm -rf /var/db/repos/* /var/cache
