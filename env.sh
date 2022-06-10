@@ -18,4 +18,11 @@ mv /gentoo/etc/portage/repos.conf/gentoo.conf /gentoo/root/
 
 # Chroot env
 cp -L /etc/resolv.conf /gentoo/etc/resolv.conf
-for i in dev sys run tmp proc; do mkdir -p /gentoo/$i && mount -R /$i /gentoo/$i; done
+for i in dev sys run tmp proc; do mkdir -p /gentoo/$i; done
+mount --rbind /dev /gentoo/dev
+mount --make-rslave /gentoo/dev
+mount -t proc /proc /gentoo/proc
+mount --rbind /sys /gentoo/sys
+mount --make-rslave /gentoo/sys
+mount --rbind /tmp /gentoo/tmp
+mount --bind /run /gentoo/run
