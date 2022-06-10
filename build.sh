@@ -12,6 +12,8 @@ emerge dev-vcs/git
 
 rm -rf /var/db/repos/* /var/cache
 
+emerge-webrsync
+
 mv $HOME/gentoo.conf /etc/portage/repos.conf
 
 emerge --sync
