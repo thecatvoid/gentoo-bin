@@ -6,12 +6,8 @@ set -ex
 # Downloads Stage 3 Gentoo Targall and unpacks it (SYSTEMD)
 mkdir -p /gentoo
 
-LINK="$(curl -Lsq https://gentoo.osuosl.org/releases/amd64/autobuilds/current-stage3-amd64-systemd/ |
-	grep -Ei "stage3-amd64-desktop-systemd-.*.tar.xz" |
-	head -1 | grep -Eo "stage3.*xz" | sed 's/">/\n/g' | uniq)"
-
-curl -Lsq "https://gentoo.osuosl.org//releases/amd64/autobuilds/current-stage3-amd64-desktop-systemd/$LINK" -o gentoo.tar.xz
-tar xpf gentoo.tar.xz --xattrs-include='*.*' --numeric-owner -C /gentoo
+curl -Lsq "https://github.com/thecatvoid/gentoo-wine-tar/releases/download/latest/gentoo.tar.gz" -o gentoo.tar.gz
+tar xpf gentoo.tar.gz --xattrs-include='*.*' --numeric-owner -C /gentoo
 rm -rf ./*.xz /gentoo/etc/portage
 
 # Misc
