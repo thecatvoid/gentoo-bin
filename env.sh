@@ -9,7 +9,7 @@ tar xpf gentoo.tar.gz --xattrs-include='*.*' --numeric-owner -C /
 rm -rf ./gentoo.tar.gz /gentoo/etc/portage
 
 # Misc
-mkdir -p /gentoo/etc/portage
+mkdir -p /gentoo/etc/portage /gentoo/root
 mv package-list package.license \
     profile binrepos.conf make.conf \
     package.accept_keywords package.use repos.conf /gentoo/etc/portage/
