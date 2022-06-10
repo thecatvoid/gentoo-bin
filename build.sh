@@ -20,4 +20,4 @@ emerge --sync
 
 (while true; do etc-update --automode -5; done &) > /dev/null 2>&1
 
-emerge -uDN @world'
+cat /etc/portage/package-list | xargs emerge'
